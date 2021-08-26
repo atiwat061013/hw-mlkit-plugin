@@ -10,6 +10,6 @@ export interface TextRecognitionOptions {
 }
 export interface HuaweiMlkitPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
-  textRec(options: TextRecognitionOptions): Promise<{ value: string }>;
+  TextRecognition(options: TextRecognitionOptions): Promise<{ value: string }>;
   // faceVerification(options: { options: FaceVerificationOptions }): Promise<{ value: string }>;
 }

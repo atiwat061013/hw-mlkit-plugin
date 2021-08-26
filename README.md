@@ -14,7 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
-* [`textRec(...)`](#textrec)
+* [`TextRecognition(...)`](#textrecognition)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -37,10 +37,10 @@ echo(options: { value: string; }) => any
 --------------------
 
 
-### textRec(...)
+### TextRecognition(...)
 
 ```typescript
-textRec(options: TextRecognitionOptions) => any
+TextRecognition(options: TextRecognitionOptions) => any
 ```
 
 | Param         | Type                                                                      |

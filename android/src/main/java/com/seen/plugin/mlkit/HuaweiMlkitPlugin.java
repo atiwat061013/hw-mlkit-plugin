@@ -37,7 +37,7 @@ public class HuaweiMlkitPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void textRec(PluginCall call) {
+    public void TextRecognition(PluginCall call) {
         String base64 = call.getString("base64");
         if (base64 == null||base64==""||base64.isEmpty()){
             call.errorCallback("can't picture");
@@ -68,7 +68,7 @@ public class HuaweiMlkitPlugin extends Plugin {
                         }
                     }
                     JSObject ret = new JSObject();
-                    ret.put("value", implementation.textRec(result));
+                    ret.put("value", implementation.TextRecognition(result));
                     call.resolve(ret);
 
                 }
