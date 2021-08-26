@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`textRec(...)`](#textrec)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -39,15 +40,26 @@ echo(options: { value: string; }) => any
 ### textRec(...)
 
 ```typescript
-textRec(options: { value: string; }) => any
+textRec(options: TextRecognitionOptions) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param         | Type                                                                      |
+| ------------- | ------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#textrecognitionoptions">TextRecognitionOptions</a></code> |
 
 **Returns:** <code>any</code>
 
 --------------------
+
+
+### Interfaces
+
+
+#### TextRecognitionOptions
+
+| Prop           | Type                |
+| -------------- | ------------------- |
+| **`language`** | <code>string</code> |
+| **`base64`**   | <code>string</code> |
 
 </docgen-api>

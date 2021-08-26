@@ -38,53 +38,61 @@ public class HuaweiMlkitPlugin extends Plugin {
 
     @PluginMethod
     public void textRec(PluginCall call) {
-        String value = call.getString("value");
+        String base64 = call.getString("base64");
+        if (base64 == null||base64==""||base64.isEmpty()){
+            call.errorCallback("can't picture");
+        }else {
+            analyzer = MLAnalyzerFactory.getInstance().getLocalTextAnalyzer();
+            MLLocalTextSetting setting = new MLLocalTextSetting.Factory()
+                    .setOCRMode(MLLocalTextSetting.OCR_DETECT_MODE)
+                    .setLanguage("en")
+                    .create();
 
-        analyzer = MLAnalyzerFactory.getInstance().getLocalTextAnalyzer();
-        MLLocalTextSetting setting = new MLLocalTextSetting.Factory()
-                .setOCRMode(MLLocalTextSetting.OCR_DETECT_MODE)
-                .setLanguage("en")
-                .create();
-
-        this.analyzer = MLAnalyzerFactory.getInstance()
-                .getLocalTextAnalyzer(setting);
+            this.analyzer = MLAnalyzerFactory.getInstance()
+                    .getLocalTextAnalyzer(setting);
 
 //        String encodedImage = value;
-        byte[] decodedString = Base64.decode(value, Base64.DEFAULT);
-        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            byte[] decodedString = Base64.decode(base64, Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
-        MLFrame frame = MLFrame.fromBitmap(decodedByte);
-        Task<MLText> task = this.analyzer.asyncAnalyseFrame(frame);
-        task.addOnSuccessListener(new OnSuccessListener<MLText>() {
-            @Override
-            public void onSuccess(MLText mlText) {
-                String result = "";
-                List<MLText.Block> blocks = mlText.getBlocks();
-                for (MLText.Block block : blocks) {
-                    for (MLText.TextLine line : block.getContents()) {
-                        result += line.getStringValue() + "\n";
+            MLFrame frame = MLFrame.fromBitmap(decodedByte);
+            Task<MLText> task = this.analyzer.asyncAnalyseFrame(frame);
+            task.addOnSuccessListener(new OnSuccessListener<MLText>() {
+                @Override
+                public void onSuccess(MLText mlText) {
+                    String result = "";
+                    List<MLText.Block> blocks = mlText.getBlocks();
+                    for (MLText.Block block : blocks) {
+                        for (MLText.TextLine line : block.getContents()) {
+                            result += line.getStringValue() + "\n";
+                        }
                     }
-                }
-                JSObject ret = new JSObject();
-                ret.put("value", implementation.textRec(result));
-                call.resolve(ret);
+                    JSObject ret = new JSObject();
+                    ret.put("value", implementation.textRec(result));
+                    call.resolve(ret);
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(Exception exception) {
-                String error = "Failure. ";
-                try {
-                    MLException mlException = (MLException) exception;
-                    error += "error code: " + mlException.getErrCode() + "\n" + "error message: " + mlException.getMessage();
-                } catch (Exception e) {
-                    error += e.getMessage();
                 }
-                JSObject ret = new JSObject();
-                ret.put("value", implementation.textRec(error));
-                call.resolve(ret);
-            }
-        });
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(Exception exception) {
+                    String error = "Failure. ";
+                    try {
+                        MLException mlException = (MLException) exception;
+                        error += "error code: " + mlException.getErrCode() + "\n" + "error message: " + mlException.getMessage();
+                    } catch (Exception e) {
+                        error += e.getMessage();
+
+                    }
+//                JSObject ret = new JSObject();
+//                ret.put("value", implementation.textRec(error));
+//                call.resolve(ret);
+                    call.errorCallback(error);
+
+                }
+            });
+        }
+
+
 
 
     }
