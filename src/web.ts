@@ -7,4 +7,9 @@ export class HuaweiMlkitWeb extends WebPlugin implements HuaweiMlkitPlugin {
     console.log('ECHO', options);
     return options;
   }
+  
+  async textRec(options: { value: string }): Promise<{ value: string }> {
+    console.log('ECHO', options);
+    return options;
+  }
 }
