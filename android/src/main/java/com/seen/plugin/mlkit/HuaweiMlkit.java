@@ -6,4 +6,5 @@ public class HuaweiMlkit {
         return value;
     }
     public String TextRecognition(String value) { return value; }
+    public String FaceDetection(String value) { return value; }
 }

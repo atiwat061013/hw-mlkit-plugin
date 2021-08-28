@@ -67,4 +67,16 @@ dependencies {
     implementation 'com.huawei.hms:ml-computer-vision-ocr-jk-model:2.0.5.301'
     // Import the Chinese and English model package.
     implementation 'com.huawei.hms:ml-computer-vision-ocr-cn-model:2.0.5.301'
+
+    // Liveness Detection SDK.
+    implementation 'com.huawei.hms:ml-computer-vision-livenessdetection:2.2.0.300'
+
+
+    // Face detection SDK.
+    implementation 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+    // Face detection model.
+    implementation 'com.huawei.hms:ml-computer-vision-face-emotion-model:2.0.5.300'
+    implementation 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
+    implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+    implementation 'com.huawei.hms:ml-computer-vision-face-3d-model:2.0.5.300'
 }

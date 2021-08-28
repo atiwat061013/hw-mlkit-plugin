@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`TextRecognition(...)`](#textrecognition)
+* [`FaceDetection(...)`](#facedetection)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -52,6 +53,21 @@ TextRecognition(options: TextRecognitionOptions) => any
 --------------------
 
 
+### FaceDetection(...)
+
+```typescript
+FaceDetection(options: FaceDetectionOptions) => any
+```
+
+| Param         | Type                                                                  |
+| ------------- | --------------------------------------------------------------------- |
+| **`options`** | <code><a href="#facedetectionoptions">FaceDetectionOptions</a></code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
 ### Interfaces
 
 
@@ -61,5 +77,12 @@ TextRecognition(options: TextRecognitionOptions) => any
 | -------------- | ------------------- |
 | **`language`** | <code>string</code> |
 | **`base64`**   | <code>string</code> |
+
+
+#### FaceDetectionOptions
+
+| Prop            | Type                |
+| --------------- | ------------------- |
+| **`FaceImage`** | <code>string</code> |
 
 </docgen-api>
