@@ -79,4 +79,10 @@ dependencies {
     implementation 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
     implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
     implementation 'com.huawei.hms:ml-computer-vision-face-3d-model:2.0.5.300'
+
+    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+    //faceVerification
+    implementation 'com.huawei.hms:ml-computer-vision-faceverify:2.2.0.300'
+    implementation 'com.huawei.hms:ml-computer-vision-faceverify-model:2.2.0.300'
+
 }

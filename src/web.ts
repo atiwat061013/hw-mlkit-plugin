@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import { FaceDetectionOptions, HuaweiMlkitPlugin, TextRecognitionOptions } from './definitions';
+import { FaceDetectionOptions, FaceVerificationOptions, HuaweiMlkitPlugin, TextRecognitionOptions } from './definitions';
 
 export class HuaweiMlkitWeb extends WebPlugin implements HuaweiMlkitPlugin {
   async echo(options: { value: string }): Promise<{ value: string }> {
@@ -18,7 +18,7 @@ export class HuaweiMlkitWeb extends WebPlugin implements HuaweiMlkitPlugin {
     return options;
   }
 
-  // async faceVerification(options: FaceVerificationOptions): Promise<{ value: string }> {
-  //   return options;
-  // }
+  async FaceVerification(options: FaceVerificationOptions): Promise<any> {
+    return options;
+  }
 }

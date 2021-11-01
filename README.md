@@ -16,6 +16,7 @@ npx cap sync
 * [`echo(...)`](#echo)
 * [`TextRecognition(...)`](#textrecognition)
 * [`FaceDetection(...)`](#facedetection)
+* [`FaceVerification(...)`](#faceverification)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -41,7 +42,7 @@ echo(options: { value: string; }) => any
 ### TextRecognition(...)
 
 ```typescript
-TextRecognition(options: TextRecognitionOptions) => any
+TextRecognition(options?: TextRecognitionOptions | undefined) => any
 ```
 
 | Param         | Type                                                                      |
@@ -56,12 +57,27 @@ TextRecognition(options: TextRecognitionOptions) => any
 ### FaceDetection(...)
 
 ```typescript
-FaceDetection(options: FaceDetectionOptions) => any
+FaceDetection(options?: FaceDetectionOptions | undefined) => any
 ```
 
 | Param         | Type                                                                  |
 | ------------- | --------------------------------------------------------------------- |
 | **`options`** | <code><a href="#facedetectionoptions">FaceDetectionOptions</a></code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### FaceVerification(...)
+
+```typescript
+FaceVerification(options?: FaceVerificationOptions | undefined) => any
+```
+
+| Param         | Type                                                                        |
+| ------------- | --------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#faceverificationoptions">FaceVerificationOptions</a></code> |
 
 **Returns:** <code>any</code>
 
@@ -84,5 +100,13 @@ FaceDetection(options: FaceDetectionOptions) => any
 | Prop            | Type                |
 | --------------- | ------------------- |
 | **`FaceImage`** | <code>string</code> |
+
+
+#### FaceVerificationOptions
+
+| Prop               | Type                |
+| ------------------ | ------------------- |
+| **`faceTemplate`** | <code>string</code> |
+| **`faceCompare`**  | <code>string</code> |
 
 </docgen-api>
