@@ -64,15 +64,6 @@ public class HuaweiMlkitPlugin extends Plugin {
     Bitmap compareBitmapCopy  = null;
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("PluginMethod[echo]value", implementation.echo(value));
-        call.resolve(ret);
-    }
-
-    @PluginMethod
     public void TextRecognition(PluginCall call) {
         String base64 = call.getString("base64");
         if (base64 == null||base64==""||base64.isEmpty()){

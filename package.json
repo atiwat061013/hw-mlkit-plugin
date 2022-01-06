@@ -1,6 +1,6 @@
 {
   "name": "hwmlkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Huawei Ml Kit",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atiwat061013.git"
+    "url": "https://github.com/atiwat061013/hw-mlkit-plugin"
   },
   "bugs": {
-    "url": "https://github.com/atiwat061013/issues"
+    "url": "https://github.com/atiwat061013/hw-mlkit-plugin/issues"
   },
   "keywords": [
     "capacitor",
