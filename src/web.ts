@@ -4,16 +4,17 @@ import { FaceDetectionOptions, FaceVerificationOptions, HuaweiMlkitPlugin, TextR
 
 export class HuaweiMlkitWeb extends WebPlugin implements HuaweiMlkitPlugin {
   async TextRecognition(options: TextRecognitionOptions): Promise<any> {
-    console.log('ECHO', options);
+    console.log('TextRecognition', options);
     return options;
   }
 
   async FaceDetection(options: FaceDetectionOptions): Promise<any> {
-    console.log('ECHO', options);
+    console.log('FaceDetection', options);
     return options;
   }
 
   async FaceVerification(options: FaceVerificationOptions): Promise<any> {
+    console.log('FaceVerification', options);
     return options;
   }
 }
